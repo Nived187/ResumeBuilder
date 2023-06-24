@@ -1,0 +1,65 @@
+
+<html>
+    <head>
+        <title> Resume Builder
+        </title>
+
+        <script src="ui.js"></script>
+        <link type="css" rel="stylesheet" href="ui.css">
+    </head>
+
+    <body>
+
+        <div>
+        <h1 align="center">Let's Quickly Build </h1>
+        <h1 align="center" color="violet">Your RESUME </h1>
+        </div> <br><br>
+
+        
+            <form action="/create" method="POST" name="form" >
+
+                Enter your full name : <input type="text" name="name"><br><br>
+                Give an objective description of you : <textarea rows="3" cols="50" name="profile"></textarea><br><br>
+                
+                Enter email : <input type="text" name="email"><br><br>
+                Enter linkedin : <input type="text" name="linkedin"><br><br>
+                Enter github : <input type="text" name="github"><br><br>
+                Enter phone : <input type="text" name="phone"><br><br>
+
+                <div id = skillsection>
+                Enter Skills : <input type="text" name="skills"> &nbsp &nbsp <button onclick="addFields('skillsection')">add</button><br>
+                
+                </div><br><br>
+
+                <div id = experience>
+                    Enter experience : <input type="text" name="experience"> &nbsp &nbsp <button onclick="addFields('experience')">add</button><br>
+                    
+                    </div><br><br>
+                
+                 <div id = projects>
+                     Enter projects : <textarea rows = 4 cols =50 name="projects"></textarea> &nbsp &nbsp <button onclick="addFields('projects')">add</button><br>
+                        
+                 </div><br><br>
+
+                 <div id = education>
+                    Enter educational qualification : <input type="text" name="education"> &nbsp &nbsp <button onclick="addFields('education')">add</button><br>
+                    
+                    </div><br><br>
+
+                    <div id = langs>
+                        Enter languages : <input type="text" name="langs"> &nbsp &nbsp 
+                        read<input type='checkbox' value="read"> &nbsp
+                        write<input type='checkbox' value="write"> &nbsp
+                        speak<input type='checkbox' value="read"> &nbsp
+                        &nbsp <button onclick="addFields('langs')">add</button><br>
+                        
+                        </div><br><br>
+
+                    <input type = 'submit' value="build">
+
+            </form>
+        
+
+        
+    </body>
+</html>
