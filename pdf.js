@@ -1,25 +1,27 @@
 
 const fs = require('fs');
-const { url } = require('inspector');
 const DOC = require('pdfkit')
 const doc = new DOC({size:"a4",font:"Times-Roman"});
 
 //input details
 
+const createPDF = (data)=>{
+
 const blue = '#187187'
 const black = '#101010'
-let name  = 'Nived'
-let accounts = {email:"nived187@outlook.com",phone:"",github:"http://github.com/Nived187",linkedin:"http://linkedin.com/in/nived-cv-792455239/"}
-let profile = "Tech enthusiast with high natural problem solving ability. Focuses on web development , has projects with nodejs,express and mongodb on github."
-let skills = ["JAVA","C","C++"]
-let experience = ["worked at bakery"]
-let projects = ["something please","TaskManager App : A simple task managing web app built using nodejs,javascript and mongodb. Demonstartes basic CRUD operations to cloud server and updating UI."]
-let education= ["10th","12th","UG"]
-let languages = ["english","malayalam","hindi"]
+// ,experience,projects,education,languages
+ const {name,profile,skills,experience,projects,education,languages} = data
+let accounts = {email:"abc@gmail.com",phone:"",github:"http://github.com/Nived187",linkedin:"http://linkedin.com/in/nived-cv-792455239/"}
+//let profile = "Tech enthusiast with high natural problem solving ability. Focuses on web development , has projects with nodejs,express and mongodb on github."
+//let skills = ["JAVA","C","C++"]
+// let experience = ["worked at bakery"]
+// let projects = ["something please","TaskManager App : A simple task managing web app built using nodejs,javascript and mongodb. Demonstartes basic CRUD operations to cloud server and updating UI."]
+// let education= ["10th","12th","UG"]
+// let languages = ["english","malayalam","hindi"]
 let accountstxt = 400;
 const accountsimg = accountstxt-25
 
-doc.pipe(fs.createWriteStream(`${name}.pdf`));
+ doc.pipe(fs.createWriteStream(`${name}.pdf`));
 
 // begin writing pdf
 
@@ -69,5 +71,8 @@ doc.font('Times-Roman').fillColor(black).list(languages).moveDown(2)
 
 
 
-doc.end()
+ doc.end()
+}
+
+module.exports = {createPDF}
 
